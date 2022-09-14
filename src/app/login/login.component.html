@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-4 ">
+            <div class=" card mb-2">
+                <form [formGroup]="signUp">
+                    <div class="divlabel">
+                        <label for="Usernmae">{{loginTitle}} </label>
+                    </div>
+                    <img class="card-img-top mt-4" [attr.src]="loginImg">
+                    <div>
+                        <label for="Username">Username : </label>
+                        <input type="text" id="uid" [attr.placeholder]="placeholder" formControlName="name" />
+                        <div class="clrerr"
+                            *ngIf="signUp.get('name')?.invalid && (signUp.get('name')?.dirty || signUp.get('name')?.touched )">
+                            *Name should have 3 to 50 characters</div>
+                    </div>
+                    <div>
+                        <label for="Password">Password: </label>
+                        <input type="Password" id="pwd" placeholder="password" formControlName="password" />
+                        <div class="clrerr"
+                            ngIf="signUp.get('password')?.invalid && (signUp.get('password')?.dirty || signUp.get('password')?.touched )">
+                            *Password should have 5 to 10 characters</div>
+                    </div>
+                    <div class="divlabel">
+                        <label for="error">{{errorMessage}} </label>
+                    </div>
+                    <button (click)="loginchk()" *ngIf="!navuser" class="btn btn-info mt-4 mr-4 ml-4 mb-4"
+                        routerLink="/login/:coaches">Login</button>
+                    <button (click)="loginchk()" *ngIf="navuser" class="btn btn-info mt-4 mr-4 ml-4 mb-4"
+                        routerLink="/login/:user">Login</button>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-4"></div>
+        <div class="col-md-2"></div>
+    </div>
+</div>

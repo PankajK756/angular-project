@@ -1,0 +1,12 @@
+.card{
+    max-width: 27em;
+    background-color: black;
+}
+.card-img-top{
+    height: 100%;
+    width: 100px;
+    margin-left: 8em;
+}
+.heading{
+    text-align: center;
+}
